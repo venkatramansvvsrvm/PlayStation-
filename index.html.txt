@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Professional Portfolio</title>
+  <style>
+    /* Basic Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #dfe9f3, #ffffff);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(to right, #4a90e2, #0073ff);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 { font-size: 2.8rem; }
+    header p { font-size: 1.2rem; opacity: 0.9; }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #ffd700; }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 { color: #0f4c81; margin-bottom: 15px; }
+    p { margin-bottom: 10px; line-height: 1.6; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #f7faff;
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #4a90e2;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover { background: #0073ff; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #e6e6e6;
+      border-top: 3px solid #b8b8b8;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1rem; }
+      section { padding: 20px; margin: 20px; }
+    }
+
+    @media (max-width: 480px) {
+      header { padding: 35px 15px; }
+      h2 { font-size: 1.4rem; }
+      section { padding: 15px; margin: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 id="greeting">My Portfolio</h1>
+    <p>Welcome to my professional portfolio website!</p>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm learning HTML, CSS, and JavaScript. This is my fully responsive, interactive portfolio website.</p>
+    <img src="https://via.placeholder.com/400x200" alt="My Photo">
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project-card" onclick="alert('You clicked on Project 1!')">
+        <img src="https://via.placeholder.com/400x200" alt="Project 1">
+        <p>Project 1: Simple Calculator</p>
+        <a href="#" class="btn">View Project</a>
+      </div>
+
+      <div class="project-card" onclick="alert('You clicked on Project 2!')">
+        <img src="https://via.placeholder.com/400x200" alt="Project 2">
+        <p>Project 2: To-Do List App</p>
+        <a href="#" class="btn">View Project</a>
+      </div>
+
+      <div class="project-card" onclick="alert('You clicked on Project 3!')">
+        <img src="https://via.placeholder.com/400x200" alt="Project 3">
+        <p>Project 3: Portfolio Website</p>
+        <a href="#" class="btn">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: example@email.com</p>
+    <p>Phone: +91 1234567890</p>
+  </section>
+
+  <footer>
+    <p>Created by Me ✨</p>
+  </footer>
+
+  <script>
+    // Dynamic greeting
+    const greeting = document.getElementById('greeting');
+    const hour = new Date().getHours();
+    if(hour < 12) greeting.textContent = 'Good Morning! My Portfolio';
+    else if(hour < 18) greeting.textContent = 'Good Afternoon! My Portfolio';
+    else greeting.textContent = 'Good Evening! My Portfolio';
+  </script>
+
+</body>
+</html>
